@@ -1,0 +1,16 @@
+# Ignorar dados brutos
+dados/
+db/
+*.xlsx
+*.csv
+*.shp
+*.dbf
+*.prj
+*.shx
+
+# Ignorar arquivos temporários de sistema e IDE
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+.vscode/
