@@ -3,7 +3,6 @@ import pandas as pd
 import sqlite3
 from pathlib import Path
 import plotly.express as px
-from scripts.ajustar_nomes_regioes import mapa_nomes_regioes
 
 # === Configurações iniciais ===
 st.set_page_config(page_title="Análise de IGV por UDH", layout="wide")
@@ -20,11 +19,7 @@ def carregar_dados():
     con.close()
     return df
 
-
-
 df = carregar_dados()
-df["regiao"] = df["regiao"].replace(mapa_nomes_regioes)
-
 
 # === Filtros ===
 regioes = sorted(df["regiao"].unique())
@@ -37,7 +32,7 @@ if regiao_sel != "Todas":
 col1, col2, col3 = st.columns(3)
 col1.metric("📊 Total de UDHs", f"{len(df):,}".replace(",", "."))
 col2.metric("🔢 IGV Médio", f"{df['igv'].mean():.3f}".replace(".", ","))
-col3.metric("🥇 IGV Máximo", f"{df['igv'].max():.3f}".replace(".", ","))
+col3.metric("⚠️ IGV Máximo", f"{df['igv'].max():.3f}".replace(".", ","))
 
 # === Tabela ===
 st.subheader("🔢 Top 10 UDHs mais vulneráveis")

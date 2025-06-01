@@ -6,8 +6,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from scripts.ajustar_nomes_regioes import mapa_nomes_regioes
-
 # === Configurações da página ===
 st.set_page_config(page_title="IGV - Índice de Vulnerabilidade", layout="wide")
 
@@ -19,10 +17,10 @@ O **IGV - Índice Geral de Vulnerabilidade** é um indicador sintético que busc
 
 Ele é construído a partir de quatro dimensões principais:
 
-- ✨ **Educação e desenvolvimento humano** (IDHM)
-- 💸 **Renda per capita baixa** (proporção de domicílios com renda de até 1 SM per capita)
-- 🌊 **Infraestrutura urbana precária** (saneamento, lixo e água encanada)
-- ♥️ **Grupos vulneráveis** (presença de idosos sem rede de apoio familiar)
+- 📚🌱**Educação e desenvolvimento humano** (IDHM)
+- 🪙😕 **Renda per capita baixa** (proporção de domicílios com renda de até 1 SM per capita)
+- 💧🗑️ **Infraestrutura urbana precária** (saneamento, lixo e água encanada)
+- 👵❓ **Grupos vulneráveis** (presença de idosos sem rede de apoio familiar)
 
 Quanto **maior o IGV**, **maior é a vulnerabilidade** daquela UDH.
 """)
@@ -37,12 +35,7 @@ def carregar_dados():
     conn.close()
     return df
 
-
 df = carregar_dados()
-
-# Substituir nomes de regiões
-df["regiao"] = df["regiao"].replace(mapa_nomes_regioes)
-
 
 # === Mapa estático com distribuição do IGV por região ===
 st.subheader("🌍 Mapa Estático: Distribuição do IGV por Região Metropolitana")
