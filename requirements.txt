@@ -1,8 +1,9 @@
 pandas
 openpyxl
 sqlalchemy
-sqlite3
 geopandas
+fiona
+shapely
+pyproj
 matplotlib
 streamlit
-matplotlib
