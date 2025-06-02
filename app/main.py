@@ -9,4 +9,6 @@ Use o menu lateral para navegar pelas páginas do aplicativo:
 
 - **Página Inicial:** Visão geral do indicador IGV
 - **Análise por UDH:** Visualização detalhada por regiões metropolitanas
+- **Comparativo Extremos:** Diferenças entre as UDHs mais e menos vulneráveis
+- **Comparativo Regional:** IGV médio e distribuição por região metropolitana
 """)
