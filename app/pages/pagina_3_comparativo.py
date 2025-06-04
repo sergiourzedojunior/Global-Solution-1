@@ -23,14 +23,17 @@ df = carregar_dados()
 
 # === Selecionar extremos ===
 N = 10
-df_sorted = df.sort_values("igv", ascending=True)
-melhores = df_sorted.head(N).copy()
-piores = df_sorted.tail(N).copy()
 
+# Seleciona os N melhores (menor IGV)
+melhores = df.sort_values("igv", ascending=True).head(N).copy()
 melhores["Grupo"] = "Melhores IGV"
+
+# Seleciona os N piores (maior IGV)
+piores = df.sort_values("igv", ascending=False).head(N).copy()
 piores["Grupo"] = "Piores IGV"
 
-df_comp = pd.concat([melhores, piores])
+# Concatena os dois grupos
+df_comp = pd.concat([melhores, piores], ignore_index=True)
 
 # === Indicadores ===
 indicadores = {
@@ -50,9 +53,10 @@ for col, label in indicadores.items():
 
 # === Tabela comparativa ===
 st.subheader("📄 Estatísticas médias dos grupos")
-df_medias = df_comp.groupby("Grupo")[[*indicadores]].mean().round(3).rename(columns=indicadores)
+df_medias = df_comp.groupby("Grupo")[list(indicadores.keys())].mean().round(3).rename(columns=indicadores)
 st.dataframe(df_medias)
 
 # === Detalhamento das UDHs ===
 with st.expander("🔎 Ver detalhes das UDHs analisadas"):
-    st.dataframe(df_comp[["nome_udh", "nome_mun", "regiao", "igv"] + list(indicadores.keys())].round(3))
+    st.dataframe(df_comp[["Grupo", "nome_udh", "nome_mun", "regiao", "igv"] + list(indicadores.keys())].round(3))
+
