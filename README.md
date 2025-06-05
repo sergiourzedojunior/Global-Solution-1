@@ -22,7 +22,23 @@ O projeto **Sentinela Social** é uma aplicação em Python (via Streamlit) cone
 
 ---
 
-## 📚 Base de Dados
+## 📚 Base de Dados e Fontes
+
+Os dados utilizados são públicos e foram consolidados previamente em um banco local `gs2025.db`. As principais fontes utilizadas foram:
+
+- **Atlas da Vulnerabilidade Social (IPEA)**  
+  Indicadores de IDHM, infraestrutura, idosos, renda.  
+  https://ivs.ipea.gov.br/index.php/pt/
+
+- **IBGE Cidades e Estados**  
+  Base geográfica e estatística nacional.  
+  https://www.ibge.gov.br
+
+- **Malhas territoriais do IBGE** (shapefiles UFs e municípios)  
+  https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais.html
+
+- **Portal Brasileiro de Dados Abertos**  
+  https://dados.gov.br/
 
 Foi utilizado um banco consolidado `gs2025.db`, contendo a tabela `igv_resultado_all` com os seguintes campos:
 
