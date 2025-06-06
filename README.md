@@ -106,4 +106,6 @@ O projeto **Sentinela Social** entrega uma ferramenta funcional de apoio à aná
 
 ## 🎬 Link do Pitch (YouTube)
 
-> [INSERIR LINK AQUI QUANDO PRONTO]
+https://youtu.be/GkOQfWOULhk
+
+https://github.com/sergiourzedojunior/Global-Solution-1.git
