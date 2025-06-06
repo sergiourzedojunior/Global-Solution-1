@@ -89,7 +89,7 @@ Foi utilizado um banco consolidado `gs2025.db`, contendo a tabela `igv_resultado
 
 ## 🖼️ Protótipos e Telas
 
-Todas as telas foram implementadas no próprio app Streamlit. Os gráficos e tabelas podem ser utilizados como protótipos na apresentação em PDF:
+Todas as telas foram implementadas no próprio app Streamlit. Os gráficos e tabelas estão como figuras na apresentação em PDF:
 
 - Mapa de calor por região
 - Histograma do IGV
